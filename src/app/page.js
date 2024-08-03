@@ -68,6 +68,7 @@ export default function Home() {
     const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${process.env.NEXT_PUBLIC_GEMINI_API_KEY}`;
     const headers = { 'Content-Type': 'application/json' };
     const data = { contents: [{ parts: [{ text: message }] }] };
+
     setIsLoading(true);
 
     try {
@@ -82,6 +83,7 @@ export default function Home() {
         throw new Error('No candidates in response');
       }
     } catch (error) {
+      console.error('API Error:', error.response?.data || error.message);
       setChatLog((prevChatLog) => [
         ...prevChatLog,
         { type: 'bot', message: `Sorry, something went wrong. Please try again. Error: ${error.message}` }
@@ -167,7 +169,6 @@ export default function Home() {
           type="text"
           placeholder="Type your message..."
           value={inputValue}
-          className="text-gray-950"
           onChange={(e) => setInputValue(e.target.value)}
           style={{ flex: 1, padding: '10px', borderRadius: '5px', border: '1px solid #ccc', marginRight: '10px' }}
         />
