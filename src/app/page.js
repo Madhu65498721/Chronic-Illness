@@ -24,8 +24,7 @@ const predefinedProblems = {
   }
 };
 
-const chronicIllnessKeywords = [
-  "chronic illness","sexual","erotic","mom","son", "medication", "diet", "check-ups", "support system", "physical activity", "well-being", "health", "symptoms", "complications", "treatment", "condition", "healthy eating", "exercise", "stress management", "support groups", "online communities", "healthcare providers", "support", "management", "long-term", "persistent", "continuous", "illness", "chronic condition"
+const chronicIllnessKeywords = [ "medication", "diet", "check-ups", "support system", "physical activity", "well-being", "health", "symptoms", "complications", "treatment", "condition", "healthy eating", "exercise", "stress management", "support groups", "online communities", "healthcare providers", "support", "management", "long-term", "persistent", "continuous", "illness", "chronic condition"
 ];
 
 export default function Home() {
